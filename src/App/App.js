@@ -49,6 +49,7 @@ function addReservation(newReservation){
     <div className="App">
       <div>
       <h1 className='app-title'>Turing Cafe Reservations</h1>
+      <h3 className='app-suggestion'>Make A Reservation</h3>
       <Form addReservation={addReservation}/>
       </div>
 
