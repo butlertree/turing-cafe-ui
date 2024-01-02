@@ -74,4 +74,35 @@ describe('Form Input Reflection', () => {
  })
  
 
+ //Adding a new reservation to the page
+ 
+describe('Add New Reservation', () => {
+  beforeEach(() => {
+    cy.intercept("GET", "http://localhost:3001/api/v1/reservations", {
+      statusCode: 200,
+      fixture: 'data.json'
+    }).as("getReservations");
+ 
+ 
+    cy.visit('localhost:3000');
+    cy.wait('@getReservations');
+  });
+ 
+ 
+  it('should allow a user to add a new reservation and display it', () => {
+    cy.get('input[name="name"]').type('Chris Butler');
+    cy.get('input[name="date"]').type('9/10');
+    cy.get('input[name="time"]').type('5:00');
+    cy.get('input[name="number"]').type('2');
+    cy.get('form button').click(); // Click submit button
+ 
+ 
+    // Check if the new reservation is displayed
+    cy.get('.reservation').should('have.length', 10); //new reservation
+    cy.get('.reservation').last().should('contain', 'Chris Butler');
+    cy.get('.reservation').last().should('contain', '9/10');
+    cy.get('.reservation').last().should('contain', '5:00');
+    cy.get('.reservation').last().should('contain', '2');
+  });
+ });
  
