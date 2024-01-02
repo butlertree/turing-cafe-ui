@@ -2,7 +2,7 @@ import './SingleRes.css'
 
 function SingleRes({ reservation }) {
 
-const{id, name, date, time, number} = reservation;
+const{name, date, time, number} = reservation;
 
 return (
     <article className="reservation">

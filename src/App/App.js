@@ -2,25 +2,10 @@ import './App.css';
 import React from 'react';
 import Form from "../Form/Form"
 import Reservations from "../Reservations/Reservations"
-import SingleRes from "../SingleRes/SingleRes"
 import { useState, useEffect } from "react"
 
 
-
-
-
-
-
-
 function App() {
-
-
-
-  const dummy = [
-  { "id": 18907224, "name": "Christie", "date": "8/8", "time": "7:00", "number": 3 },
-  { "id": 18907225, "name": "Alex", "date": "8/9", "time": "6:30", "number": 2 },
-  { "id": 18907226, "name": "Taylor", "date": "8/10", "time": "8:00", "number": 4 }
-]
 
 
 const [reservations, setReservations] = useState([])
@@ -36,12 +21,8 @@ useEffect(() => {
 }, []);
 
 function addReservation(newReservation){
-
   const updatedReservations = [...reservations, newReservation]
-
   setReservations(updatedReservations)
-
-
 }
 
 

@@ -12,7 +12,7 @@ function Form({ addReservation }) {
 const [name, setName] = useState(""); //empty string
 const [date, setDate] = useState("") //empty string
 const [time, setTime] = useState("") //empty string
-const [number, setNumber] = useState(null) //empty string
+const [number, setNumber] = useState("") //empty string
       
       
        function submitReservation(event) {

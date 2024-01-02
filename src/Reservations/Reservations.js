@@ -9,8 +9,6 @@ return <SingleRes
         key={reservation.id}
         reservation={reservation}
         />
-
-
 })
 
 return (

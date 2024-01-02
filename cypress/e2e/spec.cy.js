@@ -75,7 +75,7 @@ describe('Form Input Reflection', () => {
  
 
  //Adding a new reservation to the page
- 
+
 describe('Add New Reservation', () => {
   beforeEach(() => {
     cy.intercept("GET", "http://localhost:3001/api/v1/reservations", {
@@ -97,7 +97,7 @@ describe('Add New Reservation', () => {
     cy.get('form button').click(); // Click submit button
  
  
-    // Check if the new reservation is displayed
+    // Check for new reservation
     cy.get('.reservation').should('have.length', 10); //new reservation
     cy.get('.reservation').last().should('contain', 'Chris Butler');
     cy.get('.reservation').last().should('contain', '9/10');
