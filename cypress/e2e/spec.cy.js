@@ -10,6 +10,7 @@ describe('network requests', () => {
     cy.wait('@getReservations');
   });
 
+  //Check the reservations
   it('should GET all the reservations on page load', () => {
     cy.get('.reservationCards').children().should('have.length', 9);  
     cy.get('.reservationCards').first().should('contain', 'Christie');
@@ -47,3 +48,30 @@ describe('network requests', () => {
   });
 
 });
+
+
+// Test that when data is put into the form
+
+describe('Form Input Reflection', () => {
+  beforeEach(() => {
+    cy.intercept("GET", "http://localhost:3001/api/v1/reservations", {
+      statusCode: 200,
+      fixture: 'data.json'
+    }).as("getReservations");
+ 
+ 
+    cy.visit('localhost:3000');
+    cy.wait('@getReservations');
+  });
+ 
+ 
+  it('should reflect the input values in the form fields', () => {
+    cy.get('input[name="name"]').type('Chris Butler').should('have.value', 'Chris Butler');
+    cy.get('input[name="date"]').type('9/10').should('have.value', '9/10');
+    cy.get('input[name="time"]').type('5:00').should('have.value', '5:00');
+    cy.get('input[name="number"]').type('2').should('have.value', '2');
+  });
+ })
+ 
+
+ 
