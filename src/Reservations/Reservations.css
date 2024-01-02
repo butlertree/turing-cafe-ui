@@ -1,15 +1,14 @@
-/* Reservations.css */
 .reservationCards {
-    padding: 20px;
+    width: 100%; 
+    max-width: 1200px; 
+    margin: 0 auto; 
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust to fit the container size */
-    grid-gap: 20px; /* Space between grid items */
-  }
-  
-  .single-res {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
+}
+.reservation {
     width: 200px;      
-    height: 200px;     /* Fixed height for each card */
-    overflow: hidden;  /* Hide parts of the content that overflow */
-    /* Add any additional styling for the reservation cards */
-  }
-  
+    height: 200px;    
+    overflow: hidden;  
+
+}

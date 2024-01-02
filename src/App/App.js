@@ -35,17 +35,29 @@ useEffect(() => {
 
 }, []);
 
+function addReservation(newReservation){
+
+  const updatedReservations = [...reservations, newReservation]
+
+  setReservations(updatedReservations)
+
+
+}
+
 
   return (
     <div className="App">
+      <div>
       <h1 className='app-title'>Turing Cafe Reservations</h1>
-      <div className='resy-form'>
-      {/* <Form/> */}
+      <Form addReservation={addReservation}/>
       </div>
+
       <div className='resy-container'>
       </div>
+      <div>
       <Reservations reservations={reservations}/>
-//        {error && <h2>Something happened with getting the reservations.</h2> }
+       {error && <h2>Something happened with getting the reservations.       </h2> }
+      </div>
     </div>
   );
 }
