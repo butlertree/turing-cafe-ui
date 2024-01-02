@@ -1,0 +1,18 @@
+
+.reservation {
+    border: 1px solid grey;      
+    padding: 15px;                
+    background-color: #f9f9f9;    
+    border-radius: 8px;          
+    margin-bottom: 20px;          
+  }
+  
+  .reservation h3 {
+    color: black;                  
+    margin-bottom: 10px;          
+  }
+  
+  .reservation p {
+    color: green;                  
+    margin-bottom: 8px;           
+  }
